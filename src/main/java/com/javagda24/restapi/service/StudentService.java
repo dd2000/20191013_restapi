@@ -5,6 +5,7 @@ import com.javagda24.restapi.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 
 @Service
@@ -20,5 +21,12 @@ public class StudentService {
     // jesli chcesz mieć pewność, że rekord będzie dodany, a nie zostanie aktualizowany, to wyzerum mu id:
         student.setId(null);
         studentRepository.save(student);
+    }
+
+    public Student update(Student student) {
+        if (student.getId() != null){
+            return studentRepository.save(student);
+        }
+    throw new EntityNotFoundException("Id not provided.");
     }
 }

@@ -66,9 +66,18 @@ public class StudentController {
     // C      R      U      D
     // PUT    GET    POST   DELETE
     //POST
+
+    // localhost:8080/student
     @PutMapping("")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void insertStudent(@RequestBody Student student){
         studentService.insertIntoDatabase(student);
+    }
+
+    @PostMapping("")
+    public ResponseEntity<Student> edit(@RequestBody Student student){
+        Student studentResult = studentService.update(student);
+
+        return ResponseEntity.ok(studentResult);
     }
 }
