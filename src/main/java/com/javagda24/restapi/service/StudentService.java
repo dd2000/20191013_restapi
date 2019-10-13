@@ -15,4 +15,10 @@ public class StudentService {
     public Optional<Student> getById(Long studentId){
         return studentRepository.findById(studentId);
     }
+
+    public void insertIntoDatabase(Student student) {
+    // jesli chcesz mieć pewność, że rekord będzie dodany, a nie zostanie aktualizowany, to wyzerum mu id:
+        student.setId(null);
+        studentRepository.save(student);
+    }
 }
