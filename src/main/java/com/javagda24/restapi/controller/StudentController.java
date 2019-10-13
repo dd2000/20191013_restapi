@@ -12,7 +12,8 @@ public class StudentController {
         Student student = new Student();
         student.setFirstName("Marian");
         student.setLastName("Marianski");
-        student.setId(3L);
+        student.setId(3L); // pole Id ma wartość 3
+        // pozostałe 2 pola nie zostały ustawione
 
         return student;
     }

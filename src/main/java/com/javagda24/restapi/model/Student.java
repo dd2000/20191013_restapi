@@ -1,5 +1,6 @@
 package com.javagda24.restapi.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,9 @@ public class Student {
 
     private String firstName;
     private String lastName;
+
+    //wyświetl Json, jeśli nie jest null
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private LocalDate birthDate;
     private double average;
 
