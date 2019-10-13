@@ -20,7 +20,7 @@ public class StudentController {
         student.setFirstName("Marian");
         student.setLastName("Marianski");
 
-        student.setBirthDate(LocalDate.of(1990,03,03));
+        student.setBirthDate(LocalDateTime.of(1990,7,15,7,37));
         student.setId(3L); // pole Id ma wartość 3
         // pozostałe 2 pola nie zostały ustawione
 

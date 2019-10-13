@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -27,7 +28,7 @@ public class Student {
     //wyświetl Json, jeśli nie jest null
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @DateTimeFormat(pattern = "yyyy/MM/dd HH:mm")
-    private LocalDate birthDate;
+    private LocalDateTime birthDate;
     private double average;
 
 }
